@@ -1,6 +1,6 @@
 # php-contact-form
 # Full functional php contact form
-# Bootstrap and some css is used for designing this form and you can customise it according to your requirement.
+# Bootstrap and some css are used for designing this form and you can customise it according to your requirement.
 # for the convenience html, css, php all are written in one page so that you can easily integrate in your website. 
 # your are free to use this form for your website. 
 # This form is suitable for any html website, php website, website made with PHP Laraval, VUE.js, Wordpress website even any website made with any frame work like Angular, React or any other framwork 
