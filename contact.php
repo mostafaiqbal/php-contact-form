@@ -10,9 +10,18 @@
         }
         if(!$_POST['email']) {
             $error .= "Email is missing <br>";
+           
+        } elseif ($_POST['email']){
+            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) === false) {
+                $error.= "Email address is invalid<br>";
+            }
         }
         if(!$_POST['phone']) {
             $error .= "Phone Number is missing <br>";
+        } elseif ($_POST['email']){
+            if(filter_var($_POST['phone'], FILTER_VALIDATE_INT) === false) {
+                $error.= "Phone Number is invalid<br>";
+            }
         }
         if(!$_POST['message']) {
             $error .= "Message is missing <br>";
@@ -73,16 +82,16 @@
         <h1> Contact Us</h1> 
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
             <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo isset($_POST['name']) ? $_POST['name'] : "" ?>" >
             </div>
             <div class="form-group">
-                  <input type="email" name="email" class="form-control" placeholder="Email">
+                  <input type="email" name="email" class="form-control" placeholder="Email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : "" ?>" >
             </div>
             <div class="form-group">
-                <input type="number" name="phone" class="form-control" placeholder="Phone Number">
+                <input type="number" name="phone" class="form-control" placeholder="Phone Number" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : "" ?>">
             </div>
             <div class="form-group">
-                <textarea name="message" class="form-control"  rows="5" placeholder="Your Message"></textarea>
+                <textarea name="message" class="form-control"  rows="5" placeholder="Your Message"><?php echo isset($_POST['message']) ? $_POST['message'] : "" ?></textarea>
             </div>
                             
             <button type="submit" name="submit" class="btn btn-primary">Send Email</button>
